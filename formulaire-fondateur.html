@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire Fondateur</title>
+  <script>
+    if (!sessionStorage.getItem("paiementFondateur")) {
+      alert("⚠️ Accès refusé : veuillez effectuer le paiement d'abord.");
+      window.location.href = "paiement-fondateur.html";
+    }
+  </script>
+</head>
+<body>
+  <h2>Formulaire sécurisé - Fondateur</h2>
+  <form>
+    <label>Nom complet :</label><br />
+    <input type="text" name="nom" required><br /><br />
+    <label>Ville :</label><br />
+    <input type="text" name="ville" required><br /><br />
+    <label>Quartier :</label><br />
+    <input type="text" name="quartier" required><br /><br />
+    <label>Niveau de l’élève :</label><br />
+    <input type="text" name="niveau" required><br /><br />
+    <label>Matière souhaitée :</label><br />
+    <input type="text" name="matiere" required><br /><br />
+    <label>Contact (téléphone ou WhatsApp) :</label><br />
+    <input type="tel" name="contact" required><br /><br />
+    <button type="submit">Envoyer la demande</button>
+  </form>
+</body>
+</html>
