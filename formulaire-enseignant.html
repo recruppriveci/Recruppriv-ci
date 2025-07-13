@@ -3,30 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulaire Enseignant</title>
-  <script>
-    if (!sessionStorage.getItem("paiementEnseignant")) {
-      alert("⚠️ Accès refusé : veuillez effectuer le paiement d'abord.");
-      window.location.href = "paiement-enseignant.html";
+  <title>Formulaire Enseignant - RecruPPrivé.CI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
     }
-  </script>
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    input[type="file"] {
+      padding: 5px;
+    }
+    .radio-group {
+      margin-top: 10px;
+    }
+    .submit-btn {
+      margin-top: 20px;
+      background-color: #007acc;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h2>Formulaire sécurisé - Enseignant</h2>
-  <form>
-    <label>Nom complet :</label><br />
-    <input type="text" name="nom" required><br /><br />
-    <label>Ville :</label><br />
-    <input type="text" name="ville" required><br /><br />
-    <label>Matières enseignées :</label><br />
-    <input type="text" name="matieres" required><br /><br />
-    <label>Niveaux disponibles :</label><br />
-    <input type="text" name="niveaux" required><br /><br />
-    <label>Contact (téléphone ou WhatsApp) :</label><br />
-    <input type="tel" name="contact" required><br /><br />
-    <label>Diplôme ou expérience :</label><br />
-    <input type="text" name="experience" required><br /><br />
-    <button type="submit">Soumettre ma candidature</button>
+  <form method="post" enctype="multipart/form-data">
+    <h2>Formulaire de candidature - Enseignant</h2>
+
+    <label>Nom et prénoms</label>
+    <input type="text" name="nom" required />
+
+    <label>Date et lieu de naissance</label>
+    <input type="text" name="naissance" required />
+
+    <label>Diplôme universitaire</label>
+    <input type="text" name="diplome" required />
+
+    <label>Scan de votre diplôme</label>
+    <input type="file" name="scan_diplome" accept=".pdf,.jpg,.png" required />
+
+    <label>Scan d'une pièce d'identité</label>
+    <input type="file" name="scan_piece" accept=".pdf,.jpg,.png" required />
+
+    <label>Scan de votre CV</label>
+    <input type="file" name="cv" accept=".pdf,.doc,.docx" required />
+
+    <label>Scan d'une lettre de motivation</label>
+    <input type="file" name="lettre" accept=".pdf,.doc,.docx" required />
+
+    <label>J'accepte de payer 5.000 F à RecruPPrivé.CI pour le traitement de ma demande :</label>
+    <div class="radio-group">
+      <input type="radio" name="paiement" value="oui" required /> Oui
+      <input type="radio" name="paiement" value="non" /> Non
+    </div>
+
+    <button type="submit" class="submit-btn">Envoyer ma candidature</button>
   </form>
 </body>
 </html>
