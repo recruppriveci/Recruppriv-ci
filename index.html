@@ -15,10 +15,23 @@
     header {
       background-color: #005c99;
       color: white;
-      padding: 20px 10px;
+      padding: 30px 20px;
+    }
+    .logo {
+      max-width: 150px;
+      margin-bottom: 15px;
     }
     h1 {
       margin: 0;
+      font-size: 32px;
+    }
+    header p {
+      margin-top: 15px;
+      line-height: 1.6;
+      font-size: 18px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .container {
       margin: 30px auto;
@@ -40,25 +53,52 @@
       text-decoration: none;
       width: 80%;
       max-width: 400px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #005fa3;
+    }
+    .whatsapp-btn {
+      background-color: #25d366;
+    }
+    .email-btn {
+      background-color: #ff6600;
     }
     footer {
       margin-top: 40px;
       font-size: 14px;
       color: #555;
     }
+    .icon {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="logo-recruppriveci.png" alt="Logo RecruPPrivé.CI" class="logo" />
     <h1>Bienvenue sur RecruPPrivé.CI</h1>
-    <p>Recrutement des enseignants du privé</p>
+    <p>
+      Votre plateforme dédiée au recrutement des enseignants du privé.<br>
+      Un service fiable, rapide et sécurisé pour connecter les écoles et les talents pédagogiques.
+    </p>
   </header>
+
   <div class="container">
     <a href="formulaire-fondateur.html" class="btn">Fondateur : Remplir le formulaire</a>
     <a href="formulaire-enseignant.html" class="btn">Enseignant : Remplir le formulaire</a>
+    <a href="https://wa.me/2250759128228" class="btn whatsapp-btn" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" class="icon" alt="WhatsApp" />
+      Contacter via WhatsApp
+    </a>
+    <a href="mailto:contact@recrupprive.ci" class="btn email-btn">
+      <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" class="icon" alt="Email" />
+      Envoyer un e-mail
+    </a>
 
     <footer>
-      📞 Contact : 07 59 12 82 28
+      📧 Email : <span>contact@recrupprive.ci</span>
     </footer>
   </div>
 </body>
