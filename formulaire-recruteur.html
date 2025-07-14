@@ -1,10 +1,9 @@
-<!-- FORMULAIRE RECRUTEUR -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulaire recruteur - RecruPPrivé.CI</title>
+  <title>Formulaire Recruteur - RecruPPrivé.CI</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,11 +12,15 @@
     }
     form {
       background: white;
-      padding: 20px;
+      padding: 25px;
       border-radius: 12px;
       max-width: 600px;
       margin: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #007acc;
     }
     label {
       display: block;
@@ -34,8 +37,11 @@
     .radio-group {
       margin-top: 10px;
     }
+    .radio-group input {
+      margin-right: 8px;
+    }
     .submit-btn {
-      margin-top: 20px;
+      margin-top: 25px;
       background-color: #007acc;
       color: white;
       padding: 15px;
@@ -43,54 +49,69 @@
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
+      width: 100%;
+    }
+    .infos {
+      margin-top: 20px;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+    .note {
+      margin-top: 10px;
+      color: red;
+      font-style: italic;
+      text-align: center;
     }
   </style>
 </head>
 <body>
+
   <form action="https://formspree.io/f/xyzjqnoe" method="POST">
-    <h2>Formulaire de demande - recruteur d'école</h2>
+    <h2>Demande de Recrutement</h2>
 
-    <label>Nom et prénoms du recruteur</label>
-    <input type="text" name="fondateur" required />
+    <label for="fondateur">Nom et prénoms du recruteur</label>
+    <input type="text" name="fondateur" id="fondateur" required />
 
-    <label>Nom de l'école</label>
-    <input type="text" name="ecole" required />
+    <label for="ecole">Nom de l'école</label>
+    <input type="text" name="ecole" id="ecole" required />
 
-    <label>Ancienneté de l'école</label>
-    <input type="text" name="anciennete" required />
+    <label for="anciennete">Ancienneté de l'école</label>
+    <input type="text" name="anciennete" id="anciennete" required />
 
-    <label>Salaire minimum payé par l'école (en FCFA)</label>
-    <input type="number" name="salaire" required />
+    <label for="salaire">Salaire minimum payé par l'école (en FCFA)</label>
+    <input type="number" name="salaire" id="salaire" required />
 
-    <label>Cycle concerné</label>
-    <select name="cycle" required>
+    <label for="cycle">Cycle concerné</label>
+    <select name="cycle" id="cycle" required>
       <option value="">-- Sélectionner --</option>
       <option value="premier">Premier cycle</option>
       <option value="second">Second cycle</option>
       <option value="les deux">Les deux cycles</option>
     </select>
 
-    <label>Combien de professeurs avez-vous besoin ?</label>
-    <input type="number" name="nombre_profs" required />
+    <label for="nombre_profs">Combien de professeurs avez-vous besoin ?</label>
+    <input type="number" name="nombre_profs" id="nombre_profs" required />
 
-    <label>Les matières concernées</label>
-    <input type="text" name="matieres" placeholder="ex : Mathématiques, Anglais, SVT" required />
+    <label for="matieres">Les matières concernées</label>
+    <input type="text" name="matieres" id="matieres" placeholder="ex : Mathématiques, Anglais, SVT" required />
 
     <label>J'accepte de payer 10.000 F à RecruPPrivé.CI pour le traitement de ma demande :</label>
     <div class="radio-group">
-      <input type="radio" name="paiement" value="oui" required /> Oui
-      <input type="radio" name="paiement" value="non" /> Non
+      <label><input type="radio" name="paiement" value="oui" required /> Oui</label>
+      <label><input type="radio" name="paiement" value="non" /> Non</label>
     </div>
 
-    <p style="margin-top: 10px; color: red; font-weight: bold;">
+    <div class="infos">
       📞 Numéro de dépôt : 05 46 33 47 81
-    </p>
+    </div>
 
-    <p style="margin-top: 20px; color: red; font-style: italic;">
+    <div class="note">
       NB : une fois le paiement effectué, écrivez-nous sur ce même numéro qui est WhatsApp pour la confirmation. Merci pour la bonne compréhension.
-    </p>
+    </div>
 
     <button type="submit" class="submit-btn">Soumettre la demande</button>
   </form>
+
 </body>
 </html>
